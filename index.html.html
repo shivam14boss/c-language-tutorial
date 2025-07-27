@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Language Tutorial - Scriptnex</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Prism.js CSS for code highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .sidebar {
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Scriptnex C Tutorial</a>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 p-3 bg-light sidebar">
+      <h4 class="text-center">Topics</h4>
+      <div class="accordion" id="tutorialAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">Introduction</button></h2>
+          <div id="collapse1" class="accordion-collapse collapse show">
+            <div class="accordion-body"><a href="#intro">Getting Started</a></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">Control Structures</button></h2>
+          <div id="collapse2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <a href="#ifelse">If-Else</a><br/>
+              <a href="#switch">Switch-Case</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">Functions</button></h2>
+          <div id="collapse3" class="accordion-collapse collapse">
+            <div class="accordion-body"><a href="#functions">User Defined Functions</a></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">Advanced</button></h2>
+          <div id="collapse4" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <a href="#pointers">Pointers</a><br/>
+              <a href="#strings">String Handling</a><br/>
+              <a href="#fileio">File I/O</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 p-4">
+
+      <!-- Introduction -->
+      <section id="intro">
+        <h2>Introduction to C</h2>
+        <p>C is a general-purpose programming language developed in the 1970s. It is the foundation for many modern languages.</p>
+        <pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+  printf("Hello, World!");
+  return 0;
+}</code></pre>
+        <p><strong>Output:</strong><br>Hello, World!</p>
+      </section>
+
+      <!-- If-Else -->
+      <section id="ifelse">
+        <h2>If-Else Example</h2>
+        <pre><code class="language-c">int num = 5;
+if (num % 2 == 0)
+    printf("Even");
+else
+    printf("Odd");</code></pre>
+        <p><strong>Output:</strong> Odd</p>
+      </section>
+
+      <!-- Switch-Case -->
+      <section id="switch">
+        <h2>Switch-Case Example</h2>
+        <pre><code class="language-c">int day = 3;
+switch(day) {
+  case 1: printf("Monday"); break;
+  case 2: printf("Tuesday"); break;
+  case 3: printf("Wednesday"); break;
+  default: printf("Invalid");
+}</code></pre>
+        <p><strong>Output:</strong> Wednesday</p>
+      </section>
+
+      <!-- Functions -->
+      <section id="functions">
+        <h2>User Defined Functions</h2>
+        <pre><code class="language-c">int add(int a, int b) {
+  return a + b;
+}
+int main() {
+  printf("%d", add(3, 4));
+}</code></pre>
+        <p><strong>Output:</strong> 7</p>
+      </section>
+
+      <!-- Pointers -->
+      <section id="pointers">
+        <h2>Pointers</h2>
+        <p>Pointers store the address of another variable.</p>
+        <pre><code class="language-c">int a = 10;
+int *p = &a;
+printf("%d", *p);</code></pre>
+        <p><strong>Output:</strong> 10</p>
+      </section>
+
+      <!-- Strings -->
+      <section id="strings">
+        <h2>String Handling</h2>
+        <pre><code class="language-c">char name[10] = "Shivam";
+printf("Hello %s", name);</code></pre>
+        <p><strong>Output:</strong> Hello Shivam</p>
+      </section>
+
+      <!-- File I/O -->
+      <section id="fileio">
+        <h2>File I/O</h2>
+        <pre><code class="language-c">FILE *fp;
+fp = fopen("demo.txt", "w");
+fprintf(fp, "Welcome to Scriptnex");
+fclose(fp);</code></pre>
+        <p><strong>Output:</strong> (Writes to demo.txt file)</p>
+      </section>
+
+      <!-- MCQs -->
+      <section id="quiz">
+        <h2>Quick Quiz</h2>
+        <ul>
+          <li>Q1: What is the correct syntax to print in C?<br>
+            <b>A.</b> cout << "Hello"<br>
+            <b>B.</b> echo "Hello"<br>
+            <b>C.</b> printf("Hello") ✅<br>
+            <b>D.</b> print("Hello")
+          </li>
+          <li>Q2: What is the output of <code>printf("%d", 5+3);</code>?<br>
+            <b>A.</b> 53<br>
+            <b>B.</b> 8 ✅<br>
+            <b>C.</b> Error<br>
+            <b>D.</b> 0
+          </li>
+        </ul>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center mt-5 mb-4">
+        <hr>
+        <p><a href="#">Previous Tutorial</a> | <a href="#">Next Tutorial</a></p>
+        <p><em>Prepared by Shivam</em></p>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap & Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
+</body>
+</html>
